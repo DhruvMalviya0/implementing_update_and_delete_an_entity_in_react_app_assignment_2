@@ -1,8 +1,16 @@
-const Item = ({ item }) => {
-
-    // Render a single item
-    // Add a Delete and Edit button
-    return null;
+const Item = ({ item, onDelete }) => {
+    return (
+        <div className="item">
+            <div>
+                <strong>{item.name}</strong> (ID: {item.id}, Status: {item.status})
+            </div>
+            <button 
+                onClick={() => onDelete(item.id)}
+            >
+                Delete
+            </button>
+        </div>
+    );
 };
 
 export default Item;
